@@ -1,4 +1,4 @@
 #!/bin/bash -ex
 
 docker build -t whois-docker .
-docker run whois python whois.py /tmp/whois.py
+docker run whois-docker python whois.py /tmp/whois.py
