@@ -2,10 +2,9 @@ from ipwhois import IPWhois
 from pprint import pprint
 import csv
 
-with open('whois.csv', 'rb') as i:
-    reader = csv.reader(i)
-    ip_list = list(reader)
-    for i in ip_list:
+with open('whois.csv', 'rb') as csvfile:
+    reader = csv.reader(csvfile, delimiter=',')
+    for i in reader:
         obj = IPWhois(i)
         res = obj.lookup_whois()
         pprint(res)
