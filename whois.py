@@ -3,9 +3,10 @@ from ipwhois import IPWhois
 from pprint import pprint
 import csv, sys, argparse
 import pandas
+import os
 
-dest_ip = pandas.read_csv("whois.csv", sep=',', usecols=['dest_ip'], squeeze=True)
-count = pandas.read_csv("whois.csv", sep=',', usecols=['count'], squeeze=True)
+dest_ip = pandas.read_csv(os.environ["filepath"], sep=',', usecols=['dest_ip'], squeeze=True)
+count = pandas.read_csv(os.environ["filepath"], sep=',', usecols=['count'], squeeze=True)
 key = 'description'
 output = []
 ips = []
