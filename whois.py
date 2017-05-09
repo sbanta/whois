@@ -1,6 +1,6 @@
 from ipwhois import IPWhois
 from pprint import pprint
-from csv
+import csv
 
 with open('whois.csv', 'rb') as i:
     reader = csv.reader(i)
