@@ -1,13 +1,18 @@
+
 from ipwhois import IPWhois
 from pprint import pprint
-import csv
+import csv, sys, argparse
+import pandas
 
-with open('whois.csv', 'rb') as csvfile:
-    reader = csv.reader(csvfile, delimiter=',')
-    for i in reader:
-        obj = IPWhois(i)
-        res = obj.lookup_whois()
-        pprint(res)
+dest_ip = pandas.read_csv("whois.csv", sep=',', usecols=['dest_ip'], squeeze=True)
+print dest_ip
+key = 'description'
+for i in dest_ip:
+    print i
+    obj = IPWhois(i)
+    res = obj.lookup_whois()
+    print(res['nets'][0][key])
+
 
 #print(ip_list)
 
