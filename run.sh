@@ -12,6 +12,6 @@ else
   #docker cp $filepath whois-docker:/tmp/
   #docker run --name image_name whois-docker python whois.py /tmp/whois.py -i "/tmp/"$filepath -o outputtest.csv
   docker cp $filepath image_name:/tmp/
-  docker run -d image_name python whois.py /tmp/whois.py -i "/tmp/"$filepath -o outputtest.csv
-  docker cp image_name:/tmp/outfiletest.csv ~/Desktop/
+  docker run -d whois-docker python whois.py /tmp/whois.py -i "/tmp/"$filepath -o outputtest.csv
+  docker cp whois-docker:/tmp/outfiletest.csv ~/Desktop/
 fi
