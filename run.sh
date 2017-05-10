@@ -11,7 +11,7 @@ else
   docker build --no-cache=true -t whois-docker .
   #docker cp $filepath whois-docker:/tmp/
   #docker run --name image_name whois-docker python whois.py /tmp/whois.py -i "/tmp/"$filepath -o outputtest.csv
-  docker cp $filepath image_name:/tmp/
+  docker cp $filepath whois-docker:/tmp/
   docker run -i -t whois-docker python whois.py /tmp/whois.py -i "/tmp/"$filepath -o outputtest.csv
   docker cp whois-docker:/tmp/outfiletest.csv ~/Desktop/
 fi
