@@ -10,6 +10,6 @@ else
   export filepath
   docker build --no-cache=true -t whois-docker .
   docker cp $filepath whois:/tmp/
-  docker run - name whois whois-docker python whois.py /tmp/whois.py -i "/tmp/"$filepath -o outputtest.csv
+  docker run -name whois whois-docker python whois.py /tmp/whois.py -i "/tmp/"$filepath -o outputtest.csv
   docker cp whois:/tmp/outfiletest.csv ~/Desktop/
 fi
