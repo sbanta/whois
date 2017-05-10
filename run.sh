@@ -13,10 +13,10 @@ else
   #docker run --name image_name whois-docker python whois.py /tmp/whois.py -i "/tmp/"$filepath -o outputtest.csv
   #docker cp $filepath whois-docker:/tmp/
   #docker run -it whois-docker python whois.py /tmp/whois.py -i "/tmp/"$filepath -o outputtest.csv
-  docker run --name testing -it -d whois-docker /bin/bash
+  #docker run --name testing -it -d whois-docker /bin/bash
   docker start testing
   docker cp $filepath testing:/tmp/
-  docker testing ls /tmp/
+  docker exec -it testing ls /tmp/
   docker exec -it testing python whois.py /tmp/whois.py -i "/tmp/"$filepath -o outputtest.csv
   docker cp whois-docker:/tmp/outfiletest.csv ~/Desktop/
   docker stop testing
