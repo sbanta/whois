@@ -18,7 +18,7 @@ else
   docker cp $filepath testing:/tmp/
   docker exec -it testing ls /tmp/
   docker exec -it testing python whois.py -i "/tmp/"$filepath -o outputtest.csv
-  docker cp whois-docker:/tmp/outfiletest.csv ~/Desktop/
+  docker cp testing:/tmp/outfiletest.csv ~/Desktop/
   docker stop testing
   docker rm testing
 fi
