@@ -15,9 +15,9 @@ else
   #docker run -it whois-docker python whois.py /tmp/whois.py -i "/tmp/"$filepath -o outputtest.csv
   docker run -it -d whois-docker /bin/bash
   alias dl='docker ps -l -q'
-  docker start `dl`
-  docker cp $filepath `dl`:/tmp/
-  docker exec -it `dl` python whois.py /tmp/whois.py -i "/tmp/"$filepath -o outputtest.csv
+  docker start 'dl'
+  docker cp $filepath 'dl':/tmp/
+  docker exec -it 'dl' python whois.py /tmp/whois.py -i "/tmp/"$filepath -o outputtest.csv
   docker cp whois-docker:/tmp/outfiletest.csv ~/Desktop/
-  docker stop `dl`
+  docker stop 'dl'
 fi
