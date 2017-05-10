@@ -19,7 +19,7 @@ def main(argv):
             sys.exit()
         elif opt in ("-i", "--ifile"):
             inputfile = arg
-            print "Inputfile: " inputfile
+            print "Inputfile: ", inputfile
         elif opt in ("-o", "--ofile"):
             outputfile = arg
     dest_ip = pandas.read_csv(inputfile, sep=',', usecols=['dest_ip'], squeeze=True)
