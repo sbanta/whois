@@ -8,8 +8,8 @@ if [ $# -eq 0 ]; then
 else
   filepath=$1
   export filepath
-  docker build --no-cache=true -t whois-docker .
-  docker cp $filepath whois:/tmp/
-  docker run -name whois whois-docker python whois.py /tmp/whois.py -i "/tmp/"$filepath -o outputtest.csv
-  docker cp whois:/tmp/outfiletest.csv ~/Desktop/
+  docker build --no-cache=true -t="whois-docker" .
+  docker cp $filepath whois-docker:/tmp/
+  docker run whois-docker python whois.py /tmp/whois.py -i "/tmp/"$filepath -o outputtest.csv
+  docker cp whois-docker:/tmp/outfiletest.csv ~/Desktop/
 fi
