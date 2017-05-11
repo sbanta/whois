@@ -8,7 +8,7 @@ if [ $# -eq 0 ]; then
 else
   filepath=$1
   outfile=$2
-  docker build -t whois-docker:1.0 .
+  #docker build -t whois-docker:1.0 .
   docker run -d -t --name whois whois-docker:1.0
   docker cp $filepath whois:/tmp/
   #docker start whois
