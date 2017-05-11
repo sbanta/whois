@@ -1,10 +1,13 @@
 FROM python:2.7
 
-#RUN apt-get -u update && apt-get upgrade -y && apt-get install git
-RUN rm -rf /tmp
-RUN git clone https://github.com/sbanta/whois.git /tmp/
-WORKDIR /tmp/
+# Set the working directory to /app
+WORKDIR /app
+
+RUN rm -rf /app
+
+RUN git clone https://github.com/sbanta/whois.git /app
+
+# Install any needed packages specified in requirements.txt
+RUN pip install -r requirements.txt
+
 RUN git pull
-RUN pip install ipwhois
-RUN pip install pprint
-RUN pip install pandas
